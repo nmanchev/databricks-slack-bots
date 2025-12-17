@@ -20,6 +20,8 @@ class Config:
     # For Databricks Apps: SDK uses the app's service principal automatically
     # For local dev: SDK reads DATABRICKS_HOST and DATABRICKS_TOKEN from environment
     MODEL_SERVING_ENDPOINT_NAME = os.getenv("MODEL_SERVING_ENDPOINT_NAME")
+    SYSTEM_PROMPT = os.getenv("SYSTEM_PROMPT")
+    MAX_TOKENS = os.getenv("MAX_TOKENS")
     
     # App Configuration
     PORT = int(os.getenv("PORT", "3000"))
@@ -32,7 +34,9 @@ class Config:
             "SLACK_BOT_TOKEN",
             "SLACK_SIGNING_SECRET",
             "SLACK_APP_TOKEN",
-            "MODEL_SERVING_ENDPOINT_NAME"
+            "MODEL_SERVING_ENDPOINT_NAME",
+            "SYSTEM_PROMPT",
+            "MAX_TOKENS"
         ]
         
         missing = [var for var in required_vars if not getattr(cls, var)]

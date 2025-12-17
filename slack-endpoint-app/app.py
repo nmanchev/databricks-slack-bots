@@ -36,8 +36,8 @@ def main():
         # Initialize Databricks client with SDK Config
         # The SDK automatically uses service principal in Databricks Apps
         # or reads from environment variables for local development
-        model_serving_client = DatabricksModelServingClient(Config.MODEL_SERVING_ENDPOINT_NAME, max_tokens=500)
-        system_prompt = "You are a pre-sales assistant chatbot."
+        model_serving_client = DatabricksModelServingClient(Config.MODEL_SERVING_ENDPOINT_NAME, max_tokens=Config.MAX_TOKENS)
+        system_prompt = Config.SYSTEM_PROMPT
 
         logger.info(f"Model serving client initialized successfully")
         logger.info(f"Using endpoint: {Config.MODEL_SERVING_ENDPOINT_NAME}")
