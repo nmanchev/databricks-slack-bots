@@ -1,0 +1,15 @@
+command: ["python", "app.py"]
+
+env:
+  - name: SLACK_BOT_TOKEN
+    value: ""
+  - name: SLACK_SIGNING_SECRET
+    value: ""
+  - name: SLACK_APP_TOKEN
+    value: ""
+  - name: MODEL_SERVING_ENDPOINT_NAME
+    value: "" 
+  - name: PORT
+    value: "3000"
+  - name: LOG_LEVEL
+    value: "INFO"
